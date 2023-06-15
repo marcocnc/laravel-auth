@@ -1,5 +1,10 @@
 @extends('layouts.guest')
 
+@include('guest.partials.header')
+
 @section('content')
-    <h1>Pagina Guest pubblica</h1>
+    <div class="container my-5">
+        <h1 class="text-center">Questa è la pagina pubblica</h1>
+
+    </div>
 @endsection
