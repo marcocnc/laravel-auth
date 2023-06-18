@@ -10,7 +10,7 @@
             </li>
 
             <li class="py-2">
-                <a href=""> <i class="fa-solid fa-circle-plus"></i> New Post</a>
+                <a href="{{route('admin.posts.create')}}"> <i class="fa-solid fa-circle-plus"></i> New Post</a>
             </li>
         </ul>
     </nav>
