@@ -15,6 +15,8 @@
                 <th scope="col">Start</th>
                 <th scope="col">End</th>
                 <th scope="col">Dettagli</th>
+                <th scope="col">Modifica</th>
+                <th scope="col">Elimina</th>
               </tr>
 
             </thead>
@@ -34,7 +36,17 @@
                     <td>{{date_format($end_date, 'd/m/Y')}}</td>
                     <td>
                         <a class="btn btn-info" href="{{route('admin.posts.show', $post)}}"><i class="fa-solid fa-arrow-right"></i></a>
+                    </td>
+                    <td>
                         <a class="btn btn-warning" href="{{route('admin.posts.edit', $post)}}"><i class="fa-solid fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <form action="{{route('admin.posts.destroy', $post)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{$post->name}}?')">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" title="delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
               @endforeach
