@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm ">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('admin.home') }}">
             <div class="logo_laravel text-white">
                 <span class="fs-3">MyDashboard <i class="fa-solid fa-check"></i></span>

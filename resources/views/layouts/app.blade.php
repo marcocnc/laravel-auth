@@ -24,11 +24,13 @@
 
 <body>
     @include('admin.partials.header')
-    <div class="main-wrapper">
+    <div class="main-wrapper @auth d-flex @endauth">
 
-        @include('admin.partials.aside')
+        @auth
+            @include('admin.partials.aside')
+        @endauth
 
-        <main class="">
+        <main class="overflow-auto w-100">
             @yield('content')
         </main>
     </div>
