@@ -53,9 +53,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        $date_start = date_create($post->start);
+        $date_start_formatted =  date_format($date_start, 'd/m/Y');
+
+        $date_end = date_create($post->end);
+        $date_end_formatted =  date_format($date_end, 'd/m/Y');
+        return view('admin.posts.show', compact('post', 'date_end_formatted', 'date_start_formatted'));
     }
 
     /**

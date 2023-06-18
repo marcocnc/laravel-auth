@@ -33,7 +33,7 @@
                     <td>{{date_format($start_date, 'd/m/Y')}}</td>
                     <td>{{date_format($end_date, 'd/m/Y')}}</td>
                     <td>
-                        <a class="btn btn-primary" href="">Vai</a>
+                        <a class="btn btn-primary" href="{{route('admin.posts.show', $post)}}">Vai</a>
                     </td>
                 </tr>
               @endforeach
