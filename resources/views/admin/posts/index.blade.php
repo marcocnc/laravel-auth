@@ -1,34 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-5">
         <table class="table">
             <thead>
+
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Technologies</th>
+                <th scope="col">Start</th>
+                <th scope="col">End</th>
               </tr>
+
             </thead>
+
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+
+              @foreach ($posts as $post)
+                <tr>
+                    <td>{{$post['id']}}</td>
+                    <td>{{$post['name']}}</td>
+                    <td>{{$post['technologies']}}</td>
+                    @php
+                        $start_date = date_create($post->start);
+                        $end_date = date_create($post->end);
+                    @endphp
+                    <td>{{date_format($start_date, 'd/m/Y')}}</td>
+                    <td>{{date_format($end_date, 'd/m/Y')}}</td>
+                </tr>
+              @endforeach
+
             </tbody>
           </table>
     </div>

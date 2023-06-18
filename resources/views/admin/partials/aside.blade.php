@@ -6,7 +6,7 @@
             </li>
 
             <li class="py-2">
-                <a href=""> <i class="fa-solid fa-briefcase"></i> Portfolio</a>
+                <a href="{{route('admin.posts.index')}}"> <i class="fa-solid fa-briefcase"></i> Portfolio</a>
             </li>
 
             <li class="py-2">
