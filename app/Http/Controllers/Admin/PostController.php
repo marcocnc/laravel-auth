@@ -44,7 +44,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $form_data['slug'] = Post::generateSlug($form_data['name']);
+        $form_data['start'] = date('Y-m-d');
+        $form_data['end'] = date('Y-m-d');
+
+        $new_post = new Post();
+
+
+        $new_post->fill($form_data);
+        $new_post->save();
+        return redirect()->route('admin.posts.show', $new_post);
     }
 
     /**
