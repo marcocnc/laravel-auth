@@ -4,6 +4,22 @@
     <div class="container pt-5">
         <h1 class="text-center">Create</h1>
 
+        @if ($errors->any())
+
+            <div class="alert alert-danger" role="alert">
+
+                <ul>
+                    @foreach ($erros as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+
+
+            </div>
+
+        @endif
+
+
         <form action="{{ route('admin.posts.store') }}" method="POST">
             @csrf
             <div class="mb-3">
