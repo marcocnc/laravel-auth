@@ -25,6 +25,7 @@ Route::middleware(['auth', 'verified'])
                 ->group(function(){
                     Route::get('/', [DashboardController::class, 'index'])->name('home');
                     Route::resource('posts', PostController::class);
+                    Route::get('orderby/{direction}', [PostController::class, 'orderby'])->name('orderby');
                 });
 
 require __DIR__.'/auth.php';
