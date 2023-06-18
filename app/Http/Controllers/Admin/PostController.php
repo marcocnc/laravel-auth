@@ -80,9 +80,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -92,9 +92,18 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $form_data = $request->all();
+        $form_data['slug'] = Post::generateSlug($form_data['name']);
+
+
+
+
+        $post->update($form_data);
+        dd($post);
+
+        return redirect()->route('admin.posts.show', compact('post'));;
     }
 
     /**
