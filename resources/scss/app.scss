@@ -1,12 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 .main-wrapper{
-    height: 100vh;
-    background-color: #99ff00;
+    height: calc(100vh - 68px);
 }
 
 aside{
-    height: calc(100% - 68px);
+    height: 100%;
     width: 250px;
 
     nav{

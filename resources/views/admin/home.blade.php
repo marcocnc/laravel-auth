@@ -1,26 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2 class="fs-4 text-secondary py-4">
-        Dashboard
-    </h2>
-    <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">User Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    Ciao {{Auth::user()->name}}, bentornato!
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <h1 class="pt-5 pb-3 text-center">Home</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eaque magni deserunt alias officia provident ab sapiente, quod nobis unde facere culpa voluptatum fugiat voluptate vel voluptatem ipsum id corrupti quia voluptatibus velit! Repudiandae illo nostrum reiciendis pariatur labore eveniet quod maxime laborum aut quos quibusdam earum quis, nobis molestiae distinctio non illum sunt deserunt officia harum ut beatae sequi! Asperiores ducimus a quaerat, iusto reprehenderit, veniam sunt quo dicta, eius provident nobis doloribus aperiam! Qui nihil molestiae illum optio molestias ea corporis, provident odio, quas dolores ipsum rerum? Iusto, veritatis temporibus doloremque necessitatibus rerum debitis explicabo. Officia non amet illum tempora cumque rerum. Architecto quidem illo quasi unde, inventore atque neque ex mollitia dolores necessitatibus consectetur. Reprehenderit eaque ullam veniam. Quod laboriosam dolorem harum, at blanditiis saepe deserunt. Sunt, nam? Dolores, unde eos modi aliquid fugiat suscipit accusantium pariatur, omnis culpa veritatis commodi id distinctio laborum nobis labore quidem rerum libero incidunt esse deserunt expedita ducimus inventore. Expedita, dignissimos cumque adipisci eos debitis alias error numquam iste sint nesciunt nobis repudiandae consectetur laborum, nulla, dolores cupiditate placeat saepe quos aliquid at! Incidunt ullam ipsa consectetur itaque recusandae, ipsam perferendis magnam odio, inventore rerum quaerat! Quidem dignissimos itaque laborum voluptas.</p>
     </div>
-</div>
 @endsection

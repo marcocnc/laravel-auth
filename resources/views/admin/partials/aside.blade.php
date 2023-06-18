@@ -2,7 +2,7 @@
     <nav class="pt-5">
         <ul>
             <li class="py-2 w-100">
-                <a href=""> <i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                <a href="{{route('admin.home')}}"> <i class="fa-solid fa-chart-line"></i> Dashboard</a>
             </li>
 
             <li class="py-2">
