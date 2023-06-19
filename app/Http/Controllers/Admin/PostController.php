@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -49,6 +50,17 @@ class PostController extends Controller
         $form_data['slug'] = Post::generateSlug($form_data['name']);
         $form_data['start'] = date('Y-m-d');
         $form_data['end'] = date('Y-m-d');
+
+
+        // Verificare se è stata caricata l'immagine
+        if(array_key_exists('image', $form_data)){
+
+            // Prima di salvare l'immagine salvo il nome
+            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+
+            // Salvo l'immagine nella cartella uploads e in $form_data['image_path'] salvo il percorso
+            $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+        }
 
         $new_post = new Post();
 
