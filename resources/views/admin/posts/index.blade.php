@@ -39,15 +39,19 @@
                     </td>
                     <td>
                         <a class="btn btn-warning" href="{{route('admin.posts.edit', $post)}}"><i class="fa-solid fa-pencil"></i></a>
+
                     </td>
                     <td>
+                        @include('admin.partials.form-delete')
+                    </td>
+                    {{-- <td>
                         <form action="{{route('admin.posts.destroy', $post)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{$post->name}}?')">
                             @csrf
                             @method('DELETE')
 
                             <button type="submit" title="delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                         </form>
-                    </td>
+                    </td> --}}
                 </tr>
               @endforeach
 
