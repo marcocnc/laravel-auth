@@ -101,7 +101,6 @@ class PostController extends Controller
 
 
         $post->update($form_data);
-        dd($post);
 
         return redirect()->route('admin.posts.show', compact('post'));;
     }
