@@ -20,8 +20,9 @@
         @endif
 
 
-        <form action="{{ route('admin.posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
             <div class="mb-3">
                 <label class="form-label">Nome</label>
                 <input type="text"
@@ -35,6 +36,14 @@
                 @error('name')
                     <p class="text-danger">{{$message}}</p>
                 @enderror
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Immagine</label>
+                <input type="file"
+                class="form-control w-75"
+                id="image"
+                name="image">
             </div>
 
             <div class="mb-3">
