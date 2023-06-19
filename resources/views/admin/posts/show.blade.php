@@ -5,6 +5,9 @@
     <h1>Nome</h1>
     <p class="fs-4">{{$post->name}}</p>
 
+    <h3>Immagine</h3>
+    <img src="{{ asset('storage/' . $post->image_path) }}" alt="" width="500">
+
     <h3>Descrizione</h3>
     <p class="w-75">{{$post->description}}</p>
 

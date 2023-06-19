@@ -41,9 +41,12 @@
             <div class="mb-3">
                 <label class="form-label">Immagine</label>
                 <input type="file"
-                class="form-control w-75"
+                class="form-control w-75 mb-2"
                 id="image"
-                name="image">
+                name="image"
+                onchange="showImage(event)"
+                >
+                <img id="image-preview" src="" alt="" width="150">
             </div>
 
             <div class="mb-3">
@@ -106,3 +109,12 @@
         </form>
     </div>
 @endsection
+
+<script>
+
+    function showImage(event){
+        const tagImage = document.getElementById('image-preview');
+        tagImage.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+</script>
